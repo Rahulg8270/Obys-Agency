@@ -125,34 +125,45 @@ body{
     font-weight: 500;
 
 }
-.hero{
-    /* background-color: red; */
+.hero {
     width: 72%;
     margin-left: 28%;
     height: fit-content;
-    overflow: hidden;
+    position: relative;
+    overflow: visible; /* Ensure the ::before element is visible outside */
+}
+
+.hero .content {
+    overflow: hidden; /* Apply overflow hidden to the inner content */
+    width: 100%; /* Ensure content takes full width */
     display: flex;
     align-items: center;
 }
-.hero:nth-child(2){
+
+.hero:nth-child(2) {
     margin-top: 13.5vh;
-    position: relative;
 }
-.hero:nth-child(2)::before{
-    content: '01';
-    position: absolute;
-    top: -4%;
-    left: -12%;
-    font-size: 3.5vw;
-    font-family: 'silk serif';
-    z-index: 999999;
-}
-.hero h1{
+
+.hero h1 {
     font-size: 7.2vw;
     text-transform: uppercase;
     line-height: 7.2vw;
     letter-spacing: 0.4vw;
+    position: relative;
 }
+
+#hero1::before {
+    content: "01";
+    font-size: 3vw;
+    font-family: 'silk serif';
+    position: absolute;
+    font-weight: 100;
+    left: -12%;
+    top: -8%;
+    opacity: 1;
+    z-index: 1; /* Ensure it's above other content */
+}
+
 
 .hero h2{
     font-size: 7.2vw;
@@ -160,21 +171,13 @@ body{
     line-height: 7.2vw;
     letter-spacing: 0.5vw;
     border-bottom: 0.7vw solid #fff;
-    width: fit-content;
 }
-/* #hero1{
-    position: relative;
-}
-#hero1 h4{
-    position: absolute;
-    left: -15;
-    top: 0;
-} */
+
 #hero3{
     /* background-color: red; */
-    width: 55%;
-    display: flex;
-    justify-content: space-between;
+    /* width: 55%; */
+    /* display: flex;
+    justify-content: space-between; */
 }
 #hero3 h3{
     font-size: 7.2vw;
@@ -182,7 +185,9 @@ body{
     line-height: 7.2vw;
     letter-spacing: 0.4vw;
     text-decoration: none;
+    padding: 0 .5vw;
 }
+
 #hero3 h2:hover{
     -webkit-text-stroke: 2px #fff;
     color: transparent;
@@ -262,9 +267,17 @@ body{
 #page4-content h1{
     font-size: 7vw;
     text-transform: uppercase;
-    
+    position: relative;
 }
-
+#page4-content h1::before{
+    content: "03";
+    font-size: 3vw;
+    font-family: 'silk serif';
+    position: absolute;
+    font-weight: 100;
+    left: -12%;
+    top: 8%;
+}
 #page4-content .underline{
     height: 1px;
     background-color: #fff;
@@ -425,6 +438,16 @@ body{
 #footer-content h1{
     font-size: 7vw;
     text-transform: uppercase;
+    position: relative;
+}
+#footer-content h1::before{
+    content: "04";
+    font-size: 3vw;
+    font-family: 'silk serif';
+    position: absolute;
+    font-weight: 100;
+    left: -12%;
+    top: 8%;
 }
 .underline{
     height: 1px;
@@ -441,6 +464,7 @@ body{
     gap: 3vw;
     margin: auto 0;
     justify-content: space-between;
+    padding-right: 10vw;
 }
 .contact-dets{
 
@@ -449,7 +473,7 @@ body{
  
 }
 .contact-dets h5{
-    font-size: 1.2vw;
+    font-size: 1vw;
     font-weight: 500;
     padding-bottom: 1.5vw;
     text-transform: capitalize;
@@ -459,6 +483,10 @@ body{
     font-size: 1.8vw;
     font-weight: 500;
     text-transform: capitalize;
+}
+#email h6{
+    text-transform: lowercase;
+    text-decoration: underline;
 }
 #copyright-text{
     font-size: 1.2vw;
